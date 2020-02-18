@@ -9,6 +9,14 @@ title: "Home Page"
 {% for product in site.products %}
  
 
+<div class="bg-light text-white mb-5">
+<div class="container  text-dark">
+    <h1 class="pb-5 pt-5">{{ site.title }}</h1>
+    <p class="">Support for digital sales from Snipcart. Hosting by Netlify. SSG by Jekyll. CSS by Bootstrap. </p>
+    <div class="pb-5"><a class="" href="https://app.netlify.com/start/deploy?repository=https://github.com/whaleen/static-digital-sale"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a></div>
+</div>
+</div>
+
 <div class="container">
     
     <div class="row">
@@ -17,9 +25,11 @@ title: "Home Page"
       </div>
 
       <div class="col-sm">
+          Ebook
         <h1 class="mt-5">{{ product.title }}</h1>
-    <p class="lead">{{ product.description }}</p>
-    {{ product.price }}
+        <p class="">$ {{ product.price }}</p>
+        <p class="">{{ product.description }}</p>
+    
 
     <button class="snipcart-add-item btn btn-primary"
     data-item-id="{{ product.title | slugify }}"
@@ -36,11 +46,8 @@ title: "Home Page"
       </div>
     </div>
   </div>
-  
-  <main role="main" class="container">
-    
-  </main>
-
+<hr />  
+ 
 
 
   <footer class="footer">
