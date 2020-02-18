@@ -1,0 +1,56 @@
+---
+layout: default
+title: "Home Page"
+---
+
+
+ 
+<!-- Begin product content -->
+{% for product in site.products %}
+ 
+
+<div class="container">
+    
+    <div class="row">
+      <div class="col-sm">
+        <img class="img-fluid" src="{{ product.featured_image }}" />
+      </div>
+
+      <div class="col-sm">
+        <h1 class="mt-5">{{ product.title }}</h1>
+    <p class="lead">{{ product.description }}</p>
+    {{ product.price }}
+
+    <button class="snipcart-add-item btn btn-primary"
+    data-item-id="{{ product.title | slugify }}"
+    data-item-price="{{ product.price }}"
+    data-item-url="{{ site.url }}{{ product.url }}"
+    data-item-description="{{ product.description }}"
+    data-item-image="{{ site.url }}{{ product.featured_image }}"
+    data-item-name="{{ product.title }}"
+    data-item-file-guid=""
+    >
+    Add to cart
+  </button>
+
+      </div>
+    </div>
+  </div>
+  
+  <main role="main" class="container">
+    
+  </main>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">{{ site.title }}</span>
+    </div>
+  </footer>
+
+
+
+<a href="{{ product.url }}">
+</a>
+{% endfor %}
